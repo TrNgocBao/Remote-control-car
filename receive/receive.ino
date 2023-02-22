@@ -47,7 +47,7 @@ void loop() {
     digitalWrite(in2, LOW);
     digitalWrite(in3, HIGH);
     digitalWrite(in4, LOW);
-    motorSpeedA = map(yAxis, 460, 0, 0, 255);// chuyển đổi giá trị analog trục y của joy gửi về tương ứng với tốc độ độ của động cơ ( 460 -- 0 ; 0---- 255)
+    motorSpeedA = map(yAxis, 460, 0, 0, 255);
     motorSpeedB = map(yAxis, 460, 0, 0, 255);
   }
   else if (yAxis > 550) {
@@ -64,7 +64,6 @@ void loop() {
     motorSpeedB = 0;
   }
   if (xAxis < 460) {
-// chuyển đổi giá trị analog trục x của joy gửi về tương ứng với tốc độ độ của động cơ ( 470 -- 0 ; 0---- 255)
     int xMapped = map(xAxis, 460, 0, 0, 255);
     // xe rẻ trái
     motorSpeedA = motorSpeedA + xMapped;
@@ -77,7 +76,6 @@ void loop() {
     }
   }
   if (xAxis > 550) {
-  // chuyển đổi giá trị analog trục x của joy gửi về tương ứng với tốc độ độ của động cơ ( 550-----1023 ; 0---- 255)
     int xMapped = map(xAxis, 550, 1023, 0, 255);
     // xe rẻ phải
     motorSpeedA = motorSpeedA - xMapped;
